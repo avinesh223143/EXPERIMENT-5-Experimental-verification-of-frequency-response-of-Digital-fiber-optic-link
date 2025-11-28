@@ -32,19 +32,35 @@ The photodiode converts the detected light into a photocurrent. With the aid of 
 
 ## PROCEDURE:
 
-1. Connect the power supply to the board.  
-2. Ensure that all switched faults are set to ‘Off’.  
-3. Make the following connections:  
-   a. Connect the 1 KHz square wave output to emitter 1's input.  
-   b. Connect the fiber optic cable between emitter output and detector input.  
-   c. Connect detector 1's output to comparator 1’s input.  
-   d. Connect comparator 1's output to AC amplifier 1's input.  
-4. On the board, switch emitter 1's driver to digital mode.  
-5. Switch on the power.  
-6. Monitor both the inputs to comparator 1 (TP13 & TP14). Slowly adjust the comparator's bias preset until the DC level on TP13 lies midway between the high and low levels of the signal on TP14.  
-7. Observe the input to emitter 1 (TP5) and the output from AC amplifier 1 (TP28). Verify that both signals are identical.  
-8. Vary the frequency between 10 Hz to 1 MHz and observe the output voltage for a constant input voltage of 5V.  
-9. Calculate the bandwidth by determining the gain in decibels (dB).  
+1-	Refer to the block diagram & carry out the following connections and settings.
+-	Connect the power supply with proper polarity to the kit link-B and switch it on.
+-	Keep all Switch Faults in OFF position.
+-	Keep switch SW8 towards TX position.
+-	Keep switch SW9 towards TX1 position.
+-	Keep switch SW10 towards TTL position.
+-	Keep Jumper JP5 towards +5V position.
+-	Keep Jumpers JP6 shorted.
+-	Keep Jumper JP8 towards Pulse position.
+-	Feed TTL Square wave signal of 1KHz from the function generator to the IN post of Digital Buffer.
+
+<img width="507" height="295" alt="image" src="https://github.com/user-attachments/assets/6267363b-e383-452b-9e42-0a84fb077b02" />
+ 
+-	Connect the output post OUT of Digital Buffer to the post TX IN of Transmitter.
+-	Slightly unscrew the cap of SFH756V (660nm). Do not remove the cap from the connector. Once the cap is loosened, insert the one meter fiber into the cap. Now tighten the cap by screwing it back.
+-	Connect the other end of the Fiber to detector SFH551V (Photo Transistor Detector) very carefully.
+-	Observe the detected signal at post TTL OUT on oscilloscope.
+
+ <img width="507" height="295" alt="image" src="https://github.com/user-attachments/assets/b9b81581-4572-465b-b7f5-c19945b1c3fe" />
+
+-	To measure the digital bandwidth of the phototransistor vary the input signal frequency and observe the detected signal at various frequencies.
+-	Determine the frequency at which the detector stops recovering the signal. This determines the max. bit rate on the digital link.
+-	Keep switch SW9 towards TX2 position.
+-	Keep Jumper JP7 towards +5V position.
+-	Remove fiber cable from SFH756V (660nm) and slightly unscrew the cap of SFH450V (950nm). Do not remove the cap from the connector. Once the cap is loosened, insert the one meter fiber into the cap. Now tighten the cap by screwing it back.
+-	Observe the detected signal at post TTL OUT on oscilloscope.
+
+<img width="507" height="295" alt="image" src="https://github.com/user-attachments/assets/28db90ea-6a22-4570-bf4a-6727e34cc2e5" />
+
 
 ---
 
